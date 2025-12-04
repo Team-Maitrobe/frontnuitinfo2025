@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# 📌 README — Projet React (Front)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🎯 Description
 
-Currently, two official plugins are available:
+Cette application constitue la partie **frontend** d’un projet découpé en deux dépôts :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* **Frontend (ce dépôt)** : interface utilisateur en React.
+* **Backend (dépôt séparé)** : API REST
 
-## React Compiler
+Le front communique avec le back via des requêtes HTTP (fetch/axios), et gère l’affichage, la navigation et la logique client.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📁 Structure du projet
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+/src
+  /components
+  /pages
+  /styles
+  App.jsx
+  main.jsx
+public/
+package.json
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Les principales pages incluent notamment :
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* `Accueil` — page d’accueil de l’application
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Technologies utilisées
+
+* React 18
+* react-router-dom
+* Vite
+* JavaScript / JSX
+* CSS
+
+---
+
+## ⚙️ Installation
+
+### 1. Cloner le front
+
+```bash
+git clone https://github.com/Team-Maitrobe/frontnuitinfo2025.git
+cd <nom-du-dossier>
 ```
+
+### 2. Installer les dépendances
+
+```bash
+npm install
+npm install react-router-dom
+```
+
+---
+
+## 🚀 Lancer le projet en développement
+
+```bash
+npm run dev
+```
+
+L’application sera disponible sur :
+
+```
+http://localhost:5173
+```
+
+---
+
+## 🔗 Connexion avec le backend
+
+Le backend est disponible dans un **second dépôt** :
+
+👉 **Repo backend :** 
+``` bash
+git clone https://github.com/Team-Maitrobe/backnuitinfo2025.git
+```
+
+## 📝 Auteur
+
+Octave — Team Maitrobé, participant
+
+---
