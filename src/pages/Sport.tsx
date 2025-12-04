@@ -1,13 +1,11 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Liste from "../components/Liste";
 
-export default function Accueil() {
+export default function Sport() {
   return (
     <div>
       <Header />
-      <h2>Page d'accueil</h2>
-      <Liste />
+      <h2>Page sport</h2>
       <Footer />
     </div>
   );

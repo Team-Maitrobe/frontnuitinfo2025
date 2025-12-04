@@ -1,13 +1,11 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Liste from "../components/Liste";
 
-export default function Accueil() {
+export default function Formulaire() {
   return (
     <div>
       <Header />
-      <h2>Page d'accueil</h2>
-      <Liste />
+      <h2>Page formulaire</h2>
       <Footer />
     </div>
   );
