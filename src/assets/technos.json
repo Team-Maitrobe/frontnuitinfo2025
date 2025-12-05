@@ -1,0 +1,40 @@
+{
+  "technologies": [
+    {
+      "name": "Lecteur Audio",
+      "nonOpenSource": "/garageband.png",
+      "openSource": "/audacity.png"
+    },
+    {
+      "name": "Navigateur Web",
+      "nonOpenSource": "/chrome.png",
+      "openSource": "/firefox.png"
+    },
+    {
+      "name": "Éditeur de Texte",
+      "nonOpenSource": "/word.png",
+      "openSource": "/libreoffice.png"
+    },
+    {
+      "name": "Client Mail",
+      "nonOpenSource": "/outlook.png",
+      "openSource": "/thunderbird.png"
+    },
+    {
+      "name": "Logiciel de Réunion",
+      "nonOpenSource": "/googlemeet.png",
+      "openSource": "/zoom.png"
+    },
+    {
+      "name": "Moteur de Recherche",
+      "nonOpenSource": "/google.png",
+      "openSource": "/duckduckgo.png"
+    },
+    {
+      "name": "Analyse de Données Web",
+      "nonOpenSource": "/googleanalytics.png",
+      "openSource": "/motomo.png"
+    }
+
+  ]
+}
