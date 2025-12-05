@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -6,6 +7,8 @@ export default function Formulaire() {
   const containerRef = useRef<HTMLDivElement>(null);
   const selectRef = useRef<HTMLSelectElement>(null);
   const [sexePos, setSexePos] = useState({ x: 0, y: 0 });
+  const [description, setDescription] = useState(""); // pour le textarea
+  const navigate = useNavigate();
 
   const handleMouseEnter = () => {
     if (!containerRef.current || !selectRef.current) return;
@@ -13,7 +16,6 @@ export default function Formulaire() {
     const container = containerRef.current;
     const select = selectRef.current;
 
-    // Calculer les limites pour que le select reste visible
     const maxX = container.offsetWidth - select.offsetWidth;
     const maxY = container.offsetHeight - select.offsetHeight;
 
@@ -21,6 +23,19 @@ export default function Formulaire() {
     const y = Math.floor(Math.random() * maxY);
 
     setSexePos({ x, y });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Si le mot "snake" est présent dans le textarea, redirection
+    if (description.toLowerCase().includes("snake")) {
+      navigate("/snake");
+      return;
+    }
+
+    // Ici tu peux gérer le submit normalement
+    alert("Formulaire envoyé !");
   };
 
   return (
@@ -32,7 +47,7 @@ export default function Formulaire() {
           Formulaire NIRD
         </h2>
 
-        <form className="space-y-8 relative">
+        <form className="space-y-8 relative" onSubmit={handleSubmit}>
           {/* Nom complet */}
           <div className="flex flex-col">
             <label className="mb-2 font-semibold">Nom complet *</label>
@@ -67,7 +82,7 @@ export default function Formulaire() {
             </small>
           </div>
 
-          {/* Âge avec sliders minuscules */}
+          {/* Âge */}
           <div className="flex flex-col">
             <label className="mb-2 font-semibold">Âge *</label>
             <input
@@ -122,6 +137,8 @@ export default function Formulaire() {
               className="border-2 border-[#81C784] p-2 rounded focus:outline-none focus:ring-2 focus:ring-[#2E7D32]"
               rows={10}
               placeholder="Écrivez beaucoup, sinon vous ne pourrez pas passer à l’étape suivante…"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
 
