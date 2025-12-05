@@ -6,9 +6,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      onwarn: (warning) => {
-        // Ignore all warnings
-      },
+      onwarn: () => null,
     },
   },
 })
